@@ -11,13 +11,13 @@ def fun(arr, n):
     for i in range(n):
         arr[i] = arr[i] // n
 
-    return ' '.join(map(str, arr))
+    print(* arr)
 
 
 if __name__ == '__main__':
-    t = int(input())
-    while t > 0:
+    for _ in range(int(input())):
         n = int(input())
-        arr = [int(x) for x in input().split()]
-        print(fun(arr, n))
-        t -= 1
+        arr = input().split()
+        for i in range(n):
+            arr[i] = int(arr[i])
+        fun(arr, n)
