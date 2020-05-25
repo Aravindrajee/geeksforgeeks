@@ -9,8 +9,6 @@ https://www.geeksforgeeks.org/rearrange-array-maximum-minimum-form-set-2-o1-extr
 # second max at third position, second min at fourth position and so on
 # Assumption: The provided array is already sorted in asc order!!
 def rearrangeWithNSpace(arr, n):
-    print('This solution should give Memory Error in GeeksForGeeks Practise,'
-          ' since we are not supposed to use more than O(1) space')
     auxiliary_array = [None] * n
     small, large = 0, n-1
     for i in range(n):
@@ -59,7 +57,10 @@ if __name__ == '__main__':
     t = int(input())
     while t > 0:
         n = int(input())
-        arr = [int(x) for x in input().split()]
+        # arr = [int(x) for x in input().split()] ///// this line gives memory error, need to investigate this
+        arr = input().split()
+        for i in range(n):
+            arr[i] = int(arr[i])
         rearrangeWithNSpace(arr, n)
         rearrangeWithConstantExtraSpace(arr, n)
         t -= 1
